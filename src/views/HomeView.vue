@@ -15,23 +15,15 @@ async function getDepartement(){
   }
 }
 
-//getDepartement();
-
-async function addDepartement(){
-  try {
-    await useAxios().post("/departements", {id:1, name:"Borgou"})
-  } catch (error) {
-    console.error(error);
-  }
-}
-
-addDepartement();
+getDepartement();
 </script>
 
 <template>
   <div class="wrapper">
     <header>
-      <div class="header__left"></div>
+      <div class="header__left">
+        <div class="logo"></div>
+      </div>
       <div class="header__right"></div>
     </header>
     <main>

@@ -3,9 +3,10 @@ import axios from "axios"
 const clientHttp = axios.create(
     {
       baseURL:"http://localhost:8000",
-      headers:{
-        Accept:"text/plain"
-      }
+      /* headers:{
+        Accept:"application/json",
+        "Content-Type":"application/json"
+      } */
     }
   )
 export const useAxios = ()=>{
