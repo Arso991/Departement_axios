@@ -13,8 +13,8 @@ export const useAxios = ()=>{
     const get = async (url) =>{
       return await clientHttp.get(url)
     }
-    const post = async (url) =>{
-      return await clientHttp.post(url)
+    const post = async (url, data) =>{
+      return await clientHttp.post(url, data)
     }
     return {get, post}
 }
