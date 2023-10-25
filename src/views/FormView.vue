@@ -10,6 +10,7 @@
         <LoaderIcon v-if="Loading"/>
     </div>
 </template>
+
 <script setup lang="ts">
 import LoaderIcon from "@/components/LoaderIcon.vue";
 import clientHttp from "../libs/clientHttp"
@@ -18,7 +19,8 @@ import { useRouter } from "vue-router";
 
 const router = useRouter();
 const name = ref()
-let Loading = false   
+let Loading = ref<boolean>()
+    Loading = false   
 async function addDepartement(){
     Loading = true
   try {

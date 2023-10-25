@@ -1,21 +1,41 @@
 <script setup lang="ts">
 import { ref } from 'vue';
-import { useAxios } from '@/composable/useAxios';
+import axios from 'axios';
 import BeninIcon from '@/components/BeninIcon.vue'
 import { RouterLink } from 'vue-router';
 
 
 let allDepartement = ref([]);
 
+
 async function getDepartement(){
   try {
-    const response = await useAxios().get("/departements");
+    /* const response = await useAxios().get("/departements"); */
+    const response = await axios.get("http://localhost:8000/departements", {
+      auth: {
+        username:"Arso", 
+        password:"Ecole"
+      }
+    });
     allDepartement.value = response.data;
     console.log(response);
   } catch (error) {
     console.log(error);
   }
 }
+
+/* async function login(){
+  try {
+    const user = await useAxios().post("/users", data.value, {auth:{username:"Arso", password:"Ecole"}})
+    console.log(user);
+    
+  } catch (error) {
+    console.error(error);
+    
+  }
+} */
+
+//login()
 
 getDepartement();
 </script>
